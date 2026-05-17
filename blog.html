@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>文章 - 我的个人网站</title>
+  <title>文章 - Jaden Xu</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="nav">
+  <nav class="nav">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;width:100%;">
       <a href="index.html" class="nav-logo">Jaden Xu</a>
       <ul class="nav-links">
         <li><a href="index.html">首页</a></li>
         <li><a href="blog.html" class="active">文章</a></li>
       </ul>
-    </nav>
+    </div>
+  </nav>
 
+  <div class="container">
     <section class="blog-header">
-      <h1>所有文章</h1>
+      <h1>文章</h1>
       <p>记录生活中的点滴思考</p>
     </section>
 
@@ -26,6 +28,11 @@
 
   <footer class="footer">
     <div class="container">
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="blog.html">文章</a>
+        <a href="https://github.com/xupu2846" target="_blank">GitHub</a>
+      </div>
       <p>© 2026 Jaden Xu</p>
     </div>
   </footer>
@@ -33,17 +40,25 @@
   <script src="js/blog.js"></script>
   <script>
     const container = document.getElementById('blog-list');
-    posts.forEach(post => {
-      container.innerHTML += `
-        <div class="post-card">
-          <a href="${post.url}">
+    if (posts.length === 0) {
+      container.innerHTML = '<div class="empty-state"><p>还没有文章</p></div>';
+    } else {
+      posts.forEach(post => {
+        const tagsHtml = post.tags
+          ? post.tags.map(t => `<span class="post-tag">${t}</span>`).join('')
+          : '';
+        container.innerHTML += `
+          <a class="post-card" href="${post.url}">
             <h3>${post.title}</h3>
-            <span class="post-meta">${post.date}</span>
+            <div class="post-meta">
+              <span>${post.date}</span>
+            </div>
             ${post.excerpt ? `<p class="post-excerpt">${post.excerpt}</p>` : ''}
+            ${tagsHtml ? `<div class="post-tags">${tagsHtml}</div>` : ''}
           </a>
-        </div>
-      `;
-    });
+        `;
+      });
+    }
   </script>
 </body>
 </html>

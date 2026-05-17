@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章 - 我的个人网站</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">你的名字</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="blog.html" class="active">文章</a></li>
+      </ul>
+    </nav>
+
+    <section class="blog-header">
+      <h1>所有文章</h1>
+      <p>记录生活中的点滴思考</p>
+    </section>
+
+    <section class="blog-list" id="blog-list"></section>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 你的名字</p>
+    </div>
+  </footer>
+
+  <script src="js/blog.js"></script>
+  <script>
+    const container = document.getElementById('blog-list');
+    posts.forEach(post => {
+      container.innerHTML += `
+        <div class="post-card">
+          <a href="${post.url}">
+            <h3>${post.title}</h3>
+            <span class="post-meta">${post.date}</span>
+            ${post.excerpt ? `<p class="post-excerpt">${post.excerpt}</p>` : ''}
+          </a>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

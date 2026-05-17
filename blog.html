@@ -7,34 +7,38 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="nav">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;width:100%;">
-      <a href="index.html" class="nav-logo">Jaden Xu</a>
-      <ul class="nav-links">
+  <div class="layout">
+    <!-- 左侧栏 -->
+    <aside class="sidebar">
+      <img class="sidebar-avatar" src="images/avatar.svg" alt="头像">
+      <div class="sidebar-name">Jaden Xu</div>
+      <div class="sidebar-tagline">在读硕士 · 网球爱好者</div>
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-bio">
+        我目前正在攻读硕士学位。学习之外，网球是我最大的爱好。这里记录我的思考和生活中的点滴。
+      </p>
+      <ul class="sidebar-nav">
         <li><a href="index.html">首页</a></li>
         <li><a href="blog.html" class="active">文章</a></li>
       </ul>
-    </div>
-  </nav>
+      <div class="sidebar-social">
+        <a href="https://github.com/xupu2846" target="_blank">GitHub</a>
+        <a href="mailto:xupu2846@gmail.com">Gmail</a>
+        <a href="mailto:xupu2846@163.com">163</a>
+      </div>
+    </aside>
 
-  <div class="container">
-    <section class="blog-header">
-      <h1>文章</h1>
-      <p>记录生活中的点滴思考</p>
-    </section>
-
-    <section class="blog-list" id="blog-list"></section>
+    <!-- 右侧主内容 -->
+    <main class="main">
+      <div class="section-header">
+        <h2 class="section-title">所有文章</h2>
+      </div>
+      <div id="blog-list"></div>
+    </main>
   </div>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-links">
-        <a href="index.html">首页</a>
-        <a href="blog.html">文章</a>
-        <a href="https://github.com/xupu2846" target="_blank">GitHub</a>
-      </div>
-      <p>© 2026 Jaden Xu</p>
-    </div>
+    <p>© 2026 Jaden Xu</p>
   </footer>
 
   <script src="js/blog.js"></script>
@@ -50,9 +54,7 @@
         container.innerHTML += `
           <a class="post-card" href="${post.url}">
             <h3>${post.title}</h3>
-            <div class="post-meta">
-              <span>${post.date}</span>
-            </div>
+            <div class="post-meta">${post.date}</div>
             ${post.excerpt ? `<p class="post-excerpt">${post.excerpt}</p>` : ''}
             ${tagsHtml ? `<div class="post-tags">${tagsHtml}</div>` : ''}
           </a>

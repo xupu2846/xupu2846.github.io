@@ -49,7 +49,7 @@
     } else {
       posts.forEach(post => {
         const tagsHtml = post.tags
-          ? post.tags.map(t => `<span class="post-tag">${t}</span>`).join('')
+          ? post.tags.map(t => `<span class="post-tag ${getTagClass(t)}">${t}</span>`).join('')
           : '';
         container.innerHTML += `
           <a class="post-card" href="${post.url}">

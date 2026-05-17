@@ -18,3 +18,15 @@ const posts = [
     url: "posts/hello-world.html"
   }
 ];
+
+// ===== 标签颜色 =====
+// 根据标签名自动分配颜色（相同标签始终同色）
+const tagColors = ['blue', 'pink', 'amber', 'purple', 'teal', 'orange', 'gray'];
+
+function getTagClass(tag) {
+  let hash = 0;
+  for (let i = 0; i < tag.length; i++) {
+    hash = tag.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return 'tag-' + tagColors[Math.abs(hash) % tagColors.length];
+}

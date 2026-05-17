@@ -201,7 +201,7 @@ body {
 }
 
 .post-card:hover h3 {
-  color: var(--accent);
+  color: #3b6fb6;
 }
 
 .post-card .post-meta {
@@ -224,12 +224,18 @@ body {
 
 .post-tag {
   font-size: 0.7rem;
-  color: var(--accent);
-  background: var(--accent-light);
   padding: 1px 7px;
   border-radius: 4px;
   font-weight: 500;
 }
+
+.tag-blue   { color: #5b7eb5; background: #e8f0fe; }
+.tag-pink   { color: #b57b8a; background: #fce8ed; }
+.tag-amber  { color: #b5975b; background: #fef7e0; }
+.tag-purple { color: #8a7bb5; background: #f0e8fc; }
+.tag-teal   { color: #5b9b95; background: #e0f5f2; }
+.tag-orange { color: #b5825b; background: #fdf0e0; }
+.tag-gray   { color: #7b7b7b; background: #f2f2f2; }
 
 /* ===== 文章详情页 ===== */
 .article {

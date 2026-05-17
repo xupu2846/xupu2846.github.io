@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+    <span class="icon-light">☀️</span>
+    <span class="icon-dark">🌙</span>
+  </button>
   <div class="layout">
     <!-- 左侧栏 -->
     <aside class="sidebar">
@@ -41,6 +45,7 @@
     <p>© 2026 Jaden Xu</p>
   </footer>
 
+  <script src="js/theme.js"></script>
   <script src="js/blog.js"></script>
   <script>
     const container = document.getElementById('blog-list');

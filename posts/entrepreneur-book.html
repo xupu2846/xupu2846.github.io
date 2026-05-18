@@ -5,24 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>创新不是给人看的 - Jaden Xu</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script>if(localStorage.getItem('theme-prism')==='dark'||(!localStorage.getItem('theme-prism')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')</script>
 </head>
 <body>
-  <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
-    <span class="icon-light">☀️</span>
-    <span class="icon-dark">🌙</span>
-  </button>
-  <div class="article-layout">
-    <nav class="article-topnav">
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
       <a href="../index.html" class="nav-logo">Jaden Xu</a>
-      <div style="display:flex;gap:1.5rem;">
+      <div class="nav-links" id="nav-links">
         <a href="../index.html">首页</a>
         <a href="../blog.html">文章</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+          <span class="icon-light">☀️</span>
+          <span class="icon-dark">🌙</span>
+        </button>
       </div>
-    </nav>
+      <button class="hamburger" id="hamburger" aria-label="菜单">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">首页</a>
+    <a href="../blog.html">文章</a>
   </div>
 
-  <div class="article-layout">
-    <article class="article">
+  <div class="article-page">
+    <article>
       <header class="article-header">
         <h1>读《企业家：经济增长的国王》有感</h1>
         <div class="article-meta">
@@ -56,7 +68,7 @@
     </article>
   </div>
 
-  <footer class="footer" style="max-width:700px;">
+  <footer class="footer">
     <p>© 2026 Jaden Xu</p>
   </footer>
   <script src="../js/theme.js"></script>

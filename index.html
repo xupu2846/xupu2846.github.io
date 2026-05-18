@@ -5,41 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaden Xu</title>
   <link rel="stylesheet" href="css/style.css">
+  <script>if(localStorage.getItem('theme-prism')==='dark'||(!localStorage.getItem('theme-prism')&&window.matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')</script>
 </head>
 <body>
-  <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
-    <span class="icon-light">☀️</span>
-    <span class="icon-dark">🌙</span>
-  </button>
-  <div class="layout">
-    <!-- 左侧栏 -->
-    <aside class="sidebar">
-      <img class="sidebar-avatar" src="images/avatar.svg" alt="头像">
-      <div class="sidebar-name">Jaden Xu</div>
-      <div class="sidebar-tagline">在读硕士 · 网球爱好者</div>
-      <div class="sidebar-divider"></div>
-      <p class="sidebar-bio">
-        我目前正在攻读硕士学位。学习之外，网球是我最大的爱好。这里记录我的思考和生活中的点滴。
-      </p>
-      <ul class="sidebar-nav">
-        <li><a href="index.html" class="active">首页</a></li>
-        <li><a href="blog.html">文章</a></li>
-      </ul>
-      <div class="sidebar-social">
-        <a href="https://github.com/xupu2846" target="_blank">GitHub</a>
-        <a href="mailto:xupu2846@gmail.com">Gmail</a>
-        <a href="mailto:xupu2846@163.com">163</a>
+  <!-- 顶部导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Jaden Xu</a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="active">首页</a>
+        <a href="blog.html">文章</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+          <span class="icon-light">☀️</span>
+          <span class="icon-dark">🌙</span>
+        </button>
       </div>
-    </aside>
+      <button class="hamburger" id="hamburger" aria-label="菜单">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
 
-    <!-- 右侧主内容 -->
-    <main class="main">
-      <div class="section-header">
-        <h2 class="section-title">最新文章</h2>
-        <a href="blog.html" class="view-all">全部 →</a>
-      </div>
-      <div id="recent-posts"></div>
-    </main>
+  <!-- 移动端菜单 -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="active">首页</a>
+    <a href="blog.html">文章</a>
+  </div>
+
+  <!-- 主内容区 -->
+  <div class="page-content">
+    <div class="layout">
+      <!-- 左侧 Profile -->
+      <aside class="profile">
+        <div class="profile-avatar fade-in">
+          <img src="images/avatar.jpg?v=2" alt="头像">
+        </div>
+        <div class="profile-info fade-in">
+          <h1 class="profile-name">Jaden Xu</h1>
+          <p class="profile-title">在读硕士 · 网球爱好者</p>
+          <p class="profile-institution">电池热管理</p>
+        </div>
+        <div class="profile-social fade-in">
+          <a href="https://github.com/xupu2846" target="_blank" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="mailto:xupu2846@gmail.com" title="Gmail">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+          </a>
+          <a href="mailto:xupu2846@163.com" title="163 邮箱">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+          </a>
+        </div>
+        <div class="profile-interests fade-in">
+          <h3>研究兴趣</h3>
+          <ul>
+            <li>锂离子电池</li>
+            <li>电化学-热耦合模型</li>
+            <li>电池热管理</li>
+            <li>贝叶斯优化</li>
+          </ul>
+        </div>
+        <div class="like-btn-wrap fade-in">
+          <button class="like-btn" id="like-btn">
+            <span class="like-icon">♡</span>
+            <span class="like-text">点赞</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- 右侧内容 -->
+      <main class="content-area">
+        <div class="section-header fade-in">
+          <h2 class="section-title">最新文章</h2>
+          <a href="blog.html" class="view-all">全部 →</a>
+        </div>
+        <div id="recent-posts"></div>
+      </main>
+    </div>
   </div>
 
   <footer class="footer">
@@ -49,25 +95,35 @@
   <script src="js/theme.js"></script>
   <script src="js/blog.js"></script>
   <script>
+    // 渲染最新文章
     const recentPosts = posts.slice(0, 5);
     const container = document.getElementById('recent-posts');
     if (recentPosts.length === 0) {
       container.innerHTML = '<div class="empty-state"><p>还没有文章</p></div>';
     } else {
-      recentPosts.forEach(post => {
+      recentPosts.forEach((post, i) => {
         const tagsHtml = post.tags
-          ? post.tags.map(t => `<span class="post-tag ${getTagClass(t)}">${t}</span>`).join('')
+          ? post.tags.map(t => '<span class="post-tag ' + getTagClass(t) + '">' + t + '</span>').join('')
           : '';
-        container.innerHTML += `
-          <a class="post-card" href="${post.url}">
-            <h3>${post.title}</h3>
-            <div class="post-meta">${post.date}</div>
-            ${post.excerpt ? `<p class="post-excerpt">${post.excerpt}</p>` : ''}
-            ${tagsHtml ? `<div class="post-tags">${tagsHtml}</div>` : ''}
-          </a>
-        `;
+        const card = document.createElement('a');
+        card.className = 'post-card fade-in';
+        card.href = post.url;
+        card.style.transitionDelay = (i * 0.1) + 's';
+        card.innerHTML =
+          '<h3>' + post.title + '</h3>' +
+          '<div class="post-meta">' + post.date + '</div>' +
+          (post.excerpt ? '<p class="post-excerpt">' + post.excerpt + '</p>' : '') +
+          (tagsHtml ? '<div class="post-tags">' + tagsHtml + '</div>' : '');
+        container.appendChild(card);
       });
     }
+
+    // 淡入动画
+    setTimeout(function() {
+      document.querySelectorAll('.fade-in').forEach(function(el) {
+        el.classList.add('visible');
+      });
+    }, 50);
   </script>
 </body>
 </html>

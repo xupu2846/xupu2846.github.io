@@ -64,6 +64,27 @@
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* ===== Selection ===== */
+::selection {
+  background: rgba(212, 165, 98, 0.25);
+  color: var(--foreground);
+}
+
+.dark ::selection {
+  background: rgba(228, 185, 118, 0.3);
+  color: var(--foreground);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--neutral-100); }
+::-webkit-scrollbar-thumb { background: var(--neutral-300); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--neutral-400); }
+
+.dark ::-webkit-scrollbar-track { background: var(--neutral-800); }
+.dark ::-webkit-scrollbar-thumb { background: var(--neutral-600); }
+.dark ::-webkit-scrollbar-thumb:hover { background: var(--neutral-500); }
+
 /* ===== Reset ===== */
 *, *::before, *::after {
   margin: 0;
@@ -73,6 +94,13 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 body {
@@ -205,7 +233,7 @@ body {
 }
 
 .dark .theme-toggle:hover {
-  background: var(--neutral-800);
+  background: var(--neutral-100);
   border-color: var(--neutral-600);
 }
 
@@ -311,6 +339,10 @@ body {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
+.dark .profile-avatar:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
 .profile-avatar img {
   width: 100%;
   height: 100%;
@@ -370,7 +402,7 @@ body {
 }
 
 .dark .profile-social a:hover {
-  background: var(--neutral-800);
+  background: var(--neutral-100);
 }
 
 /* Interests card */
@@ -383,7 +415,7 @@ body {
 }
 
 .dark .profile-interests {
-  background: var(--neutral-800);
+  background: var(--neutral-100);
 }
 
 .profile-interests:hover {
@@ -431,7 +463,7 @@ body {
 }
 
 .dark .like-btn {
-  background: var(--neutral-800);
+  background: var(--neutral-100);
   color: var(--neutral-400);
 }
 
@@ -500,7 +532,7 @@ body {
 }
 
 .dark .post-card {
-  background: var(--neutral-800);
+  background: var(--neutral-100);
   border-color: rgba(148, 163, 184, 0.24);
 }
 
@@ -685,6 +717,10 @@ body {
   background: rgba(212, 165, 98, 0.1);
 }
 
+.dark .article-content a:hover {
+  background: rgba(228, 185, 118, 0.15);
+}
+
 .article-content strong {
   font-weight: 600;
   color: var(--primary);
@@ -700,7 +736,7 @@ body {
 }
 
 .dark .article-content code {
-  background: var(--neutral-800);
+  background: var(--neutral-100);
   color: var(--neutral-300);
 }
 
@@ -716,7 +752,7 @@ body {
 }
 
 .dark .article-content pre {
-  background: var(--neutral-800);
+  background: var(--neutral-100);
   border-color: var(--neutral-700);
 }
 

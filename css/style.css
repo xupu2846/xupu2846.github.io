@@ -781,11 +781,15 @@ body {
   font-size: 0.85rem;
   margin: 1.5rem 0;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  border: 1px solid var(--neutral-200);
 }
+.dark .article-content table { border-color: var(--neutral-600); }
+
 .article-content thead { background: var(--neutral-100); }
 .dark .article-content thead { background: var(--neutral-800); }
+
 .article-content thead th {
   padding: 0.75rem 0.65rem;
   text-align: left;
@@ -793,24 +797,34 @@ body {
   font-size: 0.78rem;
   color: var(--neutral-600);
   white-space: nowrap;
-  border-bottom: 2px solid var(--neutral-200);
+  border: 1px solid var(--neutral-200);
 }
-.dark .article-content thead th { color: var(--neutral-400); border-bottom-color: var(--neutral-600); }
+.dark .article-content thead th { color: var(--neutral-400); border-color: var(--neutral-600); }
+
 .article-content tbody td {
   padding: 0.7rem 0.65rem;
-  border-bottom: 1px solid var(--neutral-100);
+  border: 1px solid var(--neutral-200);
   vertical-align: top;
   line-height: 1.55;
 }
-.dark .article-content tbody td { border-bottom-color: var(--neutral-200); }
+.dark .article-content tbody td { border-color: var(--neutral-600); }
+
 .article-content tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
 .dark .article-content tbody tr:nth-child(even) { background: rgba(255,255,255,0.02); }
-.article-content tbody tr:hover { background: rgba(0,0,0,0.035); }
-.dark .article-content tbody tr:hover { background: rgba(255,255,255,0.04); }
-.article-content tbody tr.racquet-sep td { border-bottom: 2px dashed var(--neutral-200); }
-.dark .article-content tbody tr.racquet-sep td { border-bottom-color: var(--neutral-500); }
+.article-content tbody tr:hover { background: rgba(0,0,0,0.04); }
+.dark .article-content tbody tr:hover { background: rgba(255,255,255,0.05); }
+
+/* racquet grouping separator */
+.article-content tbody tr.racquet-sep td {
+  border-bottom: 2px solid var(--neutral-500);
+}
+.dark .article-content tbody tr.racquet-sep td { border-bottom-color: var(--neutral-400); }
+
+/* table footnote */
 .table-note { font-size: 0.78rem; color: var(--neutral-400); margin-top: 0.5rem; line-height: 1.6; }
 .dark .table-note { color: var(--neutral-500); }
+
+/* responsive: scroll on narrow screens */
 @media (max-width: 768px) {
   .article-content table { font-size: 0.75rem; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
   .article-content thead th, .article-content tbody td { padding: 0.5rem 0.5rem; }

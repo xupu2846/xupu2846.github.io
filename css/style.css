@@ -649,7 +649,7 @@ body {
 }
 
 .dark .article-content {
-  color: var(--neutral-300);
+  color: var(--neutral-700);
 }
 
 .article-content p {

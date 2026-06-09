@@ -4,6 +4,13 @@
 
 const posts = [
   {
+    title: "🎾 网球线使用数据库",
+    date: "2026-06-09",
+    excerpt: "记录用过的每一款聚酯硬线：Head Lynx、Lynx Tour、Solinco Hyper-G。含 TWU 实验室数据、论坛主流评价与个人主观感受。",
+    tags: ["网球", "装备"],
+    url: "posts/tennis-strings.html"
+  },
+  {
     title: "读《企业家：经济增长的国王》有感",
     date: "2026-05-18",
     excerpt: "读张维迎第三版序的思考：关于企业家的创新、政府的产业政策，以及如何寻找有未来的行业。",

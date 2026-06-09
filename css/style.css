@@ -787,6 +787,15 @@ body {
 }
 .dark .article-content table { border-color: var(--neutral-500); }
 
+/* wider table: extend beyond article column on large screens */
+@media (min-width: 900px) {
+  .article-content table.table-wide {
+    width: calc(100% + 10rem);
+    margin-left: -5rem;
+    margin-right: -5rem;
+  }
+}
+
 .article-content thead { background: var(--neutral-100); }
 .dark .article-content thead { background: var(--neutral-800); }
 
